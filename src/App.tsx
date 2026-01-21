@@ -156,7 +156,7 @@ function App() {
           </div>
           <div className="flex items-center gap-3">
              <div className="text-right hidden sm:block">
-                <p className="text-xs font-bold text-slate-900">Azriel Recruit</p>
+                <p className="text-xs font-bold text-slate-900">Recruiter</p>
                 <p className="text-[10px] text-slate-500 font-medium uppercase tracking-wider">Admin Role</p>
              </div>
              <div className="h-10 w-10 rounded-full bg-gradient-to-tr from-slate-200 to-slate-100 border border-slate-200 shadow-sm flex items-center justify-center font-bold text-slate-500">A</div>
