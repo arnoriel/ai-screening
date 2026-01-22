@@ -132,16 +132,6 @@ function App() {
             onClick={() => setActiveTab('organization')}
           />
         </nav>
-
-        <div className="p-4 mt-auto">
-          <div className="bg-gradient-to-br from-indigo-600 to-purple-700 rounded-2xl p-5 text-white shadow-xl shadow-indigo-100">
-            <p className="text-sm font-medium opacity-80">AI Credits</p>
-            <p className="text-2xl font-bold mt-1">1,240</p>
-            <div className="w-full bg-white/20 h-1.5 rounded-full mt-3">
-               <div className="bg-white h-full w-3/4 rounded-full" />
-            </div>
-          </div>
-        </div>
       </aside>
 
       <main className="flex-1 min-w-0 flex flex-col">
