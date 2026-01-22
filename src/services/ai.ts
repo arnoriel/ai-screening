@@ -43,7 +43,7 @@ export async function screenCandidateWithAI(
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        "model": "allenai/molmo-2-8b:free", // Bisa ganti ke "anthropic/claude-3-haiku" agar lebih murah & pintar
+        "model": "xiaomi/mimo-v2-flash:free", // Bisa ganti ke "anthropic/claude-3-haiku" agar lebih murah & pintar
         "messages": [
           { "role": "system", "content": "You are a helpful JSON-speaking HR assistant." },
           { "role": "user", "content": prompt }
