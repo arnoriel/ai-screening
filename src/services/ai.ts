@@ -1,9 +1,10 @@
 // src/services/ai.ts
 import type { AIAnalysis } from '../types';
 
-const OPENROUTER_API_KEY = "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"; 
-const SITE_URL = "http://localhost:5173";
-const SITE_NAME = "HR AI Recruiter";
+// Mengambil data dari environment variables Vite
+const OPENROUTER_API_KEY = import.meta.env.VITE_OPENROUTER_API_KEY;
+const SITE_URL = import.meta.env.VITE_SITE_URL;
+const SITE_NAME = import.meta.env.VITE_SITE_NAME;
 
 export async function screenCandidateWithAI(
   resumeText: string,
@@ -43,7 +44,7 @@ export async function screenCandidateWithAI(
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        "model": "xiaomi/mimo-v2-flash:free", // Bisa ganti ke "anthropic/claude-3-haiku" agar lebih murah & pintar
+        "model": "arcee-ai/trinity-large-preview:free",
         "messages": [
           { "role": "system", "content": "You are a helpful JSON-speaking HR assistant." },
           { "role": "user", "content": prompt }
@@ -53,6 +54,10 @@ export async function screenCandidateWithAI(
     });
 
     const data = await response.json();
+    
+    // Safety check jika API mengembalikan error
+    if (!response.ok) throw new Error(data.error?.message || "API Error");
+
     const result = JSON.parse(data.choices[0].message.content);
     return result as AIAnalysis;
 
